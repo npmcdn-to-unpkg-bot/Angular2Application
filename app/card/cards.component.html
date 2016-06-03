@@ -1,0 +1,84 @@
+<!--Spades : {{spades}} <br>
+    Clubs : {{clubs}} <br>
+    Hearts : {{hearts}} <br>
+    Diamonds : {{diamonds}} <br>-->
+<!--{{cards | json}}-->
+Click on Shuffle Cards button to start (Orange color will have 1 Point and green will have 2 points)
+
+<br>
+
+<div *ngIf="isButtonRequired">
+  <button class="btn btn-info" (click)="shuffle()">Shuffle Cards</button><br>
+</div>
+<div *ngIf="!points && !perccentage && isButtonPressed"> BAD LUCK ! Please try again!!!</div>
+
+<div *ngIf="points"><b>Points :</b> {{points}}<br></div>
+<div *ngIf="percentage"><b>Percentage :</b> {{percentage}}</div><br>
+
+<div *ngIf="points && percentage && isButtonRequired">Very nice, now you can check the history.</div>
+
+<table border="4" class="table table-striped table-bordered table-condensed table-hover">
+  <tbody>
+    <tr>
+      <td></td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+
+    </tr>
+
+    <tr>
+      <td><img src="assets/spades.png" width="60" height="80" /></td>
+      <td *ngFor="let spade of spades">
+        <!--
+                    <div style="background-color:{{spade.color}}">{{ spade.index }}</div>
+                -->
+        <div [ngClass]="spade.color">
+          <img src="assets/{{spade.index}}.png" width="60" height="80" />
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="assets/club.png" width="60" height="80" /></td>
+      <td *ngFor="let club of clubs">
+        <!--
+                    <div style="background-color:{{club.color}}">{{ club.index }}</div>
+                 -->
+
+        <div [ngClass]="club.color">
+          <img src="assets/{{club.index}}.png" width="60" height="80" />
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="assets/Heart.png" width="60" height="80" /></td>
+      <td *ngFor="let heart of hearts">
+        <!--<div style="background-color:{{heart.color}}">{{ heart.index }}</div> -->
+        <div [ngClass]="heart.color">
+          <img src="assets/{{heart.index}}.png" width="60" height="80" />
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td><img src="assets/diamond.png" width="60" height="80" /></td>
+      <td *ngFor="let diamond of diamonds">
+        <!--<div style="background-color:{{diamond.color}}"> {{ diamond.index }}</div>-->
+        <div [ngClass]="diamond.color">
+          <img src="assets/{{diamond.index}}.png" width="60" height="80" />
+        </div>
+
+      </td>
+    </tr>
+  </tbody>
+</table>

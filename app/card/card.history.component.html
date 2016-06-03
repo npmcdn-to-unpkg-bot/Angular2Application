@@ -1,0 +1,24 @@
+<h3>Card History</h3>
+
+<h4> Click on the row to get the details</h4>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Username</th>
+      <th>Points</th>
+      <th>Percentage</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let card of cards;let i = index" (click)="getCardDetails(card)">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{card.userName}}</td>
+      <td>{{card.points}}</td>
+      <td>{{card.percentage}}</td>
+      <td>{{card.date | date}}
+    </tr>   
+  </tbody>
+</table>   
