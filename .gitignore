@@ -1,5 +1,5 @@
-app/build
-app/assets
+build
+assets
 node_modules
 npm-debug.log
 src/app/**/*.js
