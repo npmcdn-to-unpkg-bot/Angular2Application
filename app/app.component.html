@@ -1,12 +1,20 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <a class="navbar-brand" href="#">Angular 2 Application</a>
     </div>
+    
+    <!--<div class="collapse navbar-collapse">-->
     <ul class="nav navbar-nav" *ngIf="flag">
       <li><a [routerLink]="['Dashboard']">Dashboard</a></li>
       <li><a [routerLink]="['History']">History</a><br></li>
     </ul>  
+    <!--</div>-->
     
     <ul class="nav navbar-nav navbar-right" *ngIf="flag">      
       <li><a href="#" (click)="logout()"> Logout </a></li>
