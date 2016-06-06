@@ -1,14 +1,15 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">The Card Game</a>
+      <a class="navbar-brand" href="#">Angular 2 Application</a>
     </div>
     <ul class="nav navbar-nav" *ngIf="flag">
       <li><a [routerLink]="['Dashboard']">Dashboard</a></li>
       <li><a [routerLink]="['History']">History</a><br></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">      
-      <li><a href="#"> {{today}}</a></li>
+    </ul>  
+    
+    <ul class="nav navbar-nav navbar-right" *ngIf="flag">      
+      <li><a href="#" (click)="logout()"> Logout </a></li>
     </ul>
   </div>
 </nav>

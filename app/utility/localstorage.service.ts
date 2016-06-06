@@ -16,5 +16,9 @@ export class LocalStorageService {
     getStorage(key: string) {
         return this.myLocalstorage.getItem(key);
     }
+    
+    clear() {
+        this.myLocalstorage.clear();
+    }
 
 }
