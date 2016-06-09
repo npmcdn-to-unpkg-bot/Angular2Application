@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { DashBoardService } from './dashboard.service';
-import { DashBoardPipe } from './dashboard.pipe';
+import { UserFilterPipe } from './dashboard.pipe';
 
 @Component({
     selector: 'p-dashboard',
     templateUrl: 'app/dashboard/dashboard.component.html',
     providers: [DashBoardService],
-    pipes: [DashBoardPipe]
+    pipes: [UserFilterPipe]
 })
 export class DashboardComponent implements OnInit {
     private usernameFilter: string = "";

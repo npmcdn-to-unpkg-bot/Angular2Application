@@ -5,7 +5,7 @@
  <input type="text" [(ngModel)]="usernameFilter"  class="form-control" placeholder="search username..." required autofocus>
           
 <ul *ngIf="Users" >
-    <li *ngFor="let user of Users| AgePipe:usernameFilter">{{user.username}}</li>
+    <li *ngFor="let user of Users| UserFilterPipe:usernameFilter">{{user.username}}</li>
 </ul>
 
 <!-- Using local variable

@@ -2,10 +2,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { User } from '../model/User';
 
 @Pipe({
-    name: 'AgePipe'
+    name: 'UserFilterPipe'
 })
 
-export class DashBoardPipe implements PipeTransform {
+export class UserFilterPipe implements PipeTransform {
 
     transform(users: User[], args) {
         if (!args && args === '') {
