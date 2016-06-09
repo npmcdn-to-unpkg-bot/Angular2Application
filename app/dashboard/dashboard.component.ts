@@ -11,27 +11,7 @@ import { UserFilterPipe } from './dashboard.pipe';
 export class DashboardComponent implements OnInit {
     private usernameFilter: string = "";
     constructor(private dashBoardService: DashBoardService) { }
-    Users: any = [{usernmae: 'TEST', password: 'TEST', age: 0}];
-    sliderValue:number = 20;
-    people = [{
-        name: 'Justin Bieber',
-        age: 21
-    }, {
-            name: 'Miley Cyrus',
-            age: 23
-        }, {
-            name: 'John Legend',
-            age: 37
-        }, {
-            name: 'Betty White',
-            age: 94
-        }, {
-            name: 'Roger Waters',
-            age: 72
-        }, {
-            name: 'Larry Page',
-            age: 42
-        }];
+    Users: any = [{usernmae: 'TEST', password: 'TEST', age: 0}];    
     ngOnInit() {
         this.dashBoardService.getUsers.subscribe((data) => {
             this.Users = data;
