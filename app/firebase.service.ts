@@ -3,11 +3,11 @@ import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class FirebaseService {
-    myFirebaseRef: Firebase = new Firebase("https://glowing-torch-4816.firebaseio.com/");
-    observedCards: any;
+    myFirebaseRef: Firebase = new Firebase("https://angular2application.firebaseio.com/");
+    getUsers: any;
     constructor() {
-        this.observedCards = Observable.create(observer => {
-            this.myFirebaseRef.child("Cards").on('value', (snapshot) => {
+        this.getUsers = Observable.create(observer => {
+            this.myFirebaseRef.child("users").on('value', (snapshot) => {
                 observer.next(snapshot.val());
             }, (error) => observer.error(error));
         });

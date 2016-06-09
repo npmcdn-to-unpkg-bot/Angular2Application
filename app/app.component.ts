@@ -50,7 +50,7 @@ export class AppComponent {
   userName: string;
   password: string;
   today: Date = new Date();
-  flag: boolean = false;
+  flag: boolean = this.localstorage.getStorage("userName") ? true : false;
 
   constructor(
     private localstorage: LocalStorageService,

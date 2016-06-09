@@ -15,14 +15,14 @@ export class CardHistoryComponent implements OnInit {
     cards: Card[] = [];
 
     ngOnInit() {
-        this.firebaseService.observedCards.subscribe((data) => {
-            var arrResult = [];
-            for (var key in data) {
-                data[key].id = key;
-                arrResult.push(data[key]);
-            }
-            this.cards = arrResult;            
-        });
+        // this.firebaseService.observedCards.subscribe((data) => {
+        //     var arrResult = [];
+        //     for (var key in data) {
+        //         data[key].id = key;
+        //         arrResult.push(data[key]);
+        //     }
+        //     this.cards = arrResult;            
+        // });
     }
     getCardDetails(card) {
         this.router.navigate(['CardHistoryDetailsComponent', { id: card.id }]);
