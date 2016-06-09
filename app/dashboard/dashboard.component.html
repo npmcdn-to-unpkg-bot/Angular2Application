@@ -1,6 +1,25 @@
 <div class="col-sm-6 col-md-4 col-md-offset-4">
 <h1> DASHBOARD </h1><br>
-<ol *ngFor="let user of Users">
-    <li>{{user | json}}</li>
-</ol>
-</div>
+
+ 
+ <input type="text" [(ngModel)]="usernameFilter"  class="form-control" placeholder="search username..." required autofocus>
+          
+<ul *ngIf="Users" >
+    <li *ngFor="let user of Users| AgePipe:usernameFilter">{{user.username}}</li>
+</ul>
+
+<!-- Using local variable
+    
+    <div>  
+  <p>
+  Username:
+    <input type="text"  
+          [value]="usernameFilter" 
+          (input)="usernameFilter = $event.target.value" /> 
+  </p>  
+    <ul>
+      <li *ngFor="let user of Users| AgePipe:usernameFilter">
+        {{user | json}}
+      </li>
+    </ul>
+</div>  -->
