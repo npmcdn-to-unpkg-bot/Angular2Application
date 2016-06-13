@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { DashBoardService } from './dashboard.service';
 import { UserFilterPipe } from './dashboard.pipe';
+import { UserInputComponent } from '../features/user.inputs.component';
 
 @Component({
     selector: 'p-dashboard',
     templateUrl: 'app/dashboard/dashboard.component.html',
     providers: [DashBoardService],
-    pipes: [UserFilterPipe]
+    directives: [UserInputComponent],
+    pipes: [UserFilterPipe],
+    styleUrls: ['app/dashboard/dashboard.css']
 })
 export class DashboardComponent implements OnInit {
     private usernameFilter: string = "";
     constructor(private dashBoardService: DashBoardService) { }
-    Users: any = [{usernmae: 'TEST', password: 'TEST', age: 0}];    
+    Users: any = [];    
     ngOnInit() {
         this.dashBoardService.getUsers.subscribe((data) => {
             this.Users = data;
