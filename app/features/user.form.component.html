@@ -1,0 +1,55 @@
+<div class="col-sm-12 col-md-12">
+    <h3 class="text-center"> Form </h3>
+</div>
+
+
+
+
+
+<!--{{model | json}}-->
+<div class="col-sm-12 col-md-12">
+    <div class="container">
+        <form novalidate (submit)="onSubmit()">
+            {{model | json}}
+            <!--<div class="input-group col-xs-4">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" required [(ngModel)]="model.name" ngControl="name" #name="ngForm">
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                    Name is required
+                </div>
+            </div>-->
+
+            <div class="input-group col-xs-4">
+                <label for="name">Select User:</label>
+                <select class="form-control" [(ngModel)]="model.name" ngControl="name" required #name="ngForm">
+                <option value="Select User" selected>Select User</option>
+                <option *ngFor="let user of Users" [value]="user.id">{{user.username}}</option>
+            </select>
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                    name is required
+                </div>
+            </div>
+
+
+            <div class="input-group col-xs-4">
+                <label for="department">Department:</label>
+                <select class="form-control" [(ngModel)]="model.department" ngControl="department" required #dept="ngForm">
+                <option *ngFor="let department of departments" [value]="department">{{department}}</option>
+            </select>
+                <div [hidden]="dept.valid || dept.pristine" class="alert alert-danger">
+                    department is required
+                </div>
+            </div>
+
+            <div class="input-group col-xs-4">
+                <label for="age">age</label>
+                <input type="number" class="form-control" required [(ngModel)]="model.age" ngControl="age" #age="ngForm">
+                <div [hidden]="age.valid || age.pristine" class="alert alert-danger">
+                    age is required
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

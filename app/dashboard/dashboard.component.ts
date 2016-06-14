@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { DashBoardService } from './dashboard.service';
 import { UserFilterPipe } from './dashboard.pipe';
 import { UserInputComponent } from '../features/user.inputs.component';
+import { UserFormComponent } from '../features/user.form.component';
 
 @Component({
     selector: 'p-dashboard',
     templateUrl: 'app/dashboard/dashboard.component.html',
     providers: [DashBoardService],
-    directives: [UserInputComponent],
+    directives: [UserInputComponent, UserFormComponent],
     pipes: [UserFilterPipe],
     styleUrls: ['app/dashboard/dashboard.css']
 })

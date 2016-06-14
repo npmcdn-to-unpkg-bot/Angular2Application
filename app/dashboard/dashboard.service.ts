@@ -18,7 +18,14 @@ export class DashBoardService {
                 observer.next(arrResult);
             }, (error) => observer.error(error));
         });
-
+    }
+    
+    updateUser = function(model) {
+      var userRef = new Firebase("https://angular2application.firebaseio.com/users/" + model.name);
+      userRef.update({
+          age: model.age,
+          department: model.department
+      });
     }
 
 

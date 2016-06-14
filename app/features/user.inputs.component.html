@@ -1,8 +1,14 @@
 <div class="col-sm-12 col-md-12">
-  <h3 class="text-center"> User Input </h3><hr>
-  <button class="btn-info" (click)="onClickMe()">Click me!</button>
-  {{clickMessage}}
+    <h3 class="text-center"> User Inputs </h3>
+    <hr>
+    <h4 class="text-center"> Binding to user input events </h4>
+    <button class="btn-info" (click)="onClickMe()">Click me!</button> {{clickMessage}}
 </div>
+<div class="clearfix"></div>
+<hr>
 
-
- <h4 class="text-center"> Get user input from the $event object </h4>
+<h4 class="text-center"> Get user input from the $event object </h4>
+<div class="align-center">
+    <input class="form-control" (keyup)="onKey($event)">
+</div>
+<p>{{values}}</p>

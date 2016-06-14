@@ -8,17 +8,38 @@
     <input type="text" [(ngModel)]="usernameFilter" class="form-control" placeholder="search username..." required autofocus>
   </div>
   <div class="col-xs-4">
-    <ul *ngIf="Users">
-      <li *ngFor="let user of Users| UserFilterPipe:usernameFilter" class="text-info">{{user.username}}</li>
-    </ul>   
+
+
+    <!--<ul *ngIf="Users">
+      <li *ngFor="let user of Users| UserFilterPipe:usernameFilter" class="text-info">{{user.username}} | {{user | json}}</li>
+    </ul>-->
+
+    <div *ngIf="Users">
+      <table border=1>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Age</th>
+        <tr *ngFor="let user of Users| UserFilterPipe:usernameFilter" class="text-info">
+        <td>{{user.username}}</td>
+        <td>{{user.department || '-'}}</td>
+        <td>{{user.age || '-'}}</td>
+        <tr>
+      </table>
+    </div>
+
+
     <div *ngIf="Users.length === 0">
-    <img src="./app/images/giphy.gif" class="div-img" />  
+      <img src="./app/images/giphy.gif" class="div-img" />
     </div>
   </div>
 </div>
 
 <div class="col-sm-4 col-md-4 col-md-4 my-border">
   <user-inputs></user-inputs>
+</div>
+
+<div class="col-sm-4 col-md-4 col-md-4 my-border">
+  <user-form></user-form>
 </div>
 
 
