@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import { da } from './../dashboard/dashboard.servce';
 
 @Injectable()
 export class FirebaseService {
