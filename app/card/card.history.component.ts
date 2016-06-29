@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../firebase.service';
 import { Card } from './card';
-import { Router } from '@angular/router-deprecated';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'card-history',

@@ -1,8 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Router } from '@angular/router-deprecated';
+import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { LocalStorageService } from './utility/localstorage.service';
 import { MissionService } from './mission.service';
-import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 import { LoginService } from './login/login.service';
 
 @Component({
@@ -28,7 +27,7 @@ export class HomeComponent implements OnInit {
             if (data) {
                 this.missionService.announceMission(this.userName);
                 this._localStorage.setStorage("userName", this.userName);
-                this.router.navigate(['Dashboard']);
+                this.router.navigate(['/Dashboard']);
             } else {
                 this.isUnAuth = true;
             }

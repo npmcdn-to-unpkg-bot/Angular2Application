@@ -1,9 +1,10 @@
 import { bootstrap }    from '@angular/platform-browser-dynamic';
 import { MissionService } from './mission.service';
+import { APP_ROUTER_PROVIDERS } from './router/app.routes';
 
 import { AppComponent } from './app.component';
 
-bootstrap(AppComponent, [MissionService]);
+bootstrap(AppComponent, [APP_ROUTER_PROVIDERS, MissionService]);
 
 
 /*
